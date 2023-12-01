@@ -1,0 +1,59 @@
+<header id="header1" style="display: flexbox; background-color:lime; width:100%; height: 2cm;float: right;">
+<img style="padding: 5px;" src="../../assets/loanform.jpg" width=80px; height="75px" alt="img">
+<h1 style="margin-right: 21cm; float:right;font-family: Arial, Helvetica, sans-serif; color:black;font-size: xx-large; padding-top: 15px;"><b>Loan Application Form</b></h1>
+
+</header>
+<div id="sidebar1" style="display: flexbox; width:15%;height:600px; float: left; background-color:greenyellow;padding-top: 10px;">
+
+
+
+
+</div>
+<div id="content1" style="display: flexbox;width:85%;height: 600px;float:right;background-color: chartreuse;">
+
+<form #customerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+<div style="width: 30%;">
+    <label for="inputName">NAME OF THE APPLICANT</label>
+    <input class="form-control" id="inputName" type="text" aria-label="default input example"  name="NAME" [(ngModel)]="customerModel.Name">
+</div>
+<div style="width: 30%;">
+    <label for="inputId">NIC NO</label>
+    <input class="form-control" id="inputId" type="text" aria-label="default input example"  name="NIC" [(ngModel)]="customerModel.NIC">
+</div>
+
+<div style="width: 30%;">
+    <label for="inputBirth">DATE OF BIRTH</label>
+    <input class="form-control" id="inputBirth" type="date"  aria-label="default input example"  name="BIRTHDAY" [(ngModel)]="customerModel.DATEOFBIRTH">
+</div>
+<div style="width: 30%;">
+    <label for="inputMobile">MOBILE NUMBER</label>
+    <input class="form-control" id="inputMobile" type="tel"  aria-label="default input example"  name="MOBILE" [(ngModel)]="customerModel.MOBILENUMBER">
+</div>
+
+<div style="width: 30%; padding-bottom: 7px;">
+    <label for="loantype">LOAN TYPE</label>
+    <select id="loantype" class="form-select" aria-label="Loan Type"  name="LOANTYPE" [(ngModel)]="customerModel.LOANTYPE">
+        <option selected>Select loan type</option>
+        <option value="1" *ngFor="let topic of Topics">{{topic}}</option>
+       
+      </select>
+
+</div>
+
+<div style="width: 30%;">
+    <label for="inputAddress">ADDRESS</label>
+    <input class="form-control" id="inputAddress" type="text"  aria-label="default input example"  name="ADDRESSS" [(ngModel)]="customerModel.ADDRESS">
+</div>
+<div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="reset" value="Clear">
+
+
+</div>
+</form>
+</div>
+<footer id="footer1" style="display: flexbox; background-color:lime; width:100%; height: 2cm;float: right;">
+
+
+
+</footer>
